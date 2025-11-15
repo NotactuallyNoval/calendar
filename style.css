@@ -1,0 +1,87 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 45px;
+    color: #d6336c;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    width: 95%;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.day {
+    position: relative;
+    background-color: #ffb3c6;
+    border-radius: 12px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Kanit', sans-serif;
+}
+
+.day.opened {
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+.day-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffff;
+}
+
+.day-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+}
+
+.day.opened .day-content {
+    display: flex;
+}
+
+.day img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.day p {
+    margin: 5px 0;
+}
+
+@media (max-width: 480px) {
+    .day {
+        height: 100px;
+    }
+    .day img {
+        width: 60px;
+        height: 60px;
+    }
+}
