@@ -44,7 +44,7 @@ h1 {
     background-color: #fff;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 5px;
+    padding: 15px;
 }
 
 .day-number {
@@ -60,14 +60,16 @@ h1 {
     text-align: center;
     font-family: 'Kanit', sans-serif;
 }
-
+.day.opened .day-number {
+    display: none;
+}
 .day.opened .day-content {
     display: flex;
 }
 
 .day img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 12px;
 }
