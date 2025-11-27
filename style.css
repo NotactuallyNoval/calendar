@@ -26,9 +26,9 @@ h1 {
 
 .day {
     position: relative;
-    background-color: #b3cbff;
+    background-color: #A9745B;
     border-radius: 12px;
-    height: 180px;
+    height: 185px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +38,20 @@ h1 {
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     font-family: 'Kanit', sans-serif;
+    border: 3px solid #5c3c22;
+}
+
+.day:not(.opened)::before {
+    content: "";
+    position: absolute;
+    width: 120px;    /* width of the rectangle */
+    height: 120px;   /* height of the rectangle */
+    background-color: rgba(255,255,255,0.5); /* semi-transparent */
+    border: 2px solid #fff; /* optional outline */
+    border-radius: 4px; /* optional rounded corners */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center it */
 }
 
 .day.opened {
@@ -60,9 +74,11 @@ h1 {
     text-align: center;
     font-family: 'Kanit', sans-serif;
 }
+
 .day.opened .day-number {
     display: none;
 }
+
 .day.opened .day-content {
     display: flex;
 }
@@ -86,4 +102,27 @@ h1 {
         width: 60px;
         height: 60px;
     }
+}
+
+/* Snowflake CSS */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    pointer-events: none;
+    z-index: 9999;
+    background: url('images/snow.png') no-repeat center center;
+    background-size: contain;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.day.shake {
+  animation: shake 0.5s;
 }
