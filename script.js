@@ -1,5 +1,5 @@
 // ================== CONFIG ==================
-const startDate = new Date("2025-12-01");
+const startDate = new Date("2025-11-01");
 
 const daysContent = [
     {img: "images/song1.png", text: "จะ 9 เดือนละ ที่เองบอกว่าเองชอบเขาเหมือนกัน ขอบคุณนะนานา 🥰"},
